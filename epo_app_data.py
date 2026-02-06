@@ -6,7 +6,7 @@ from datetime import datetime
 
 # --- KONFIGURATION ---
 # Hier deine Firmen eintragen
-FIRMEN = ['WFL Millturn', 'Siemens AG'] 
+FIRMEN = ['WFL'] 
 DATA_FILE = 'app_patent_data.json'
 
 def run_monitor():
@@ -40,8 +40,18 @@ def run_monitor():
     for firma in FIRMEN:
         print(f"Suche nach: {firma}...")
         try:
-            # Der Aufruf erfolgt ohne Keyword-Argumente für maximale Kompatibilität
-            response = client.published_data_search(f'pa="{firma}"', 1, 50)
+            # Wir suchen nach dem Firmennamen im Feld 'pa'
+            query = f'pa="{firma}"'
+            # Das EPA liefert meist die aktuellsten Daten, wenn man den Suchbereich groß genug wählt 
+            # oder explizit nach Veröffentlichungsjahren filtert
+            response = client.published_data_search(query, 1, 100) 
+            print(f"Antwort-Status für {firma}: {response.status_code}")
+            # Testweise die Anzahl der gefundenen Ergebnisse im XML anzeigen:
+            if "total-result-count" in response.text:
+                import re
+                count = re.findall(r'total-result-count="(\d+)"', response.text)
+                print(f"Treffer gefunden: {count}")
+
             response.raise_for_status()
             
             root = ET.fromstring(response.content)
