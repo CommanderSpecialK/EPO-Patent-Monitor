@@ -1,4 +1,4 @@
 streamlit
 pandas
 requests
-epo-ops
+python-epo-ops-client
