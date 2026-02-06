@@ -35,23 +35,23 @@ if check_password():
         response = requests.get(DATA_URL, headers=headers)
         
         if response.status_code == 200:
-            # Sicherheitscheck: Ist die Antwort leer?
-            if not response.text.strip():
-                st.warning("Die Datenbank-Datei ist noch leer.")
+            content = response.text.strip()
+            # Falls die Datei nur "[]" enthält oder leer ist
+            if content == "[]" or not content:
+                st.info("Die Datenbank ist aktuell noch leer.")
             else:
-                data = response.json() # Nutzt direkt die requests-interne JSON-Logik
+                # Hier nutzen wir response.json() statt json.loads()
+                data = response.json()
                 df = pd.DataFrame(data)
-                
-                if not df.empty:
-                    st.success(f"{len(df)} Patente geladen.")
-                    st.dataframe(df, use_container_width=True)
-                else:
-                    st.info("Keine Einträge in der Liste.")
+                st.success("Daten erfolgreich geladen.")
+                st.dataframe(df)
         else:
-            st.error(f"Fehler beim Laden: Status {response.status_code}. Prüfe die URL und den GH_PAT.")
-            
+            st.error(f"GitHub meldet Fehler {response.status_code}. Token oder URL prüfen.")
     except Exception as e:
-        st.error(f"Kritischer Fehler beim Verarbeiten der Daten: {e}")
+        st.error(f"Inhalt der Datei ist kein gültiges JSON: {e}")
+        # Debug: Zeige die ersten 100 Zeichen der Antwort
+        st.code(response.text[:100], language="text")
+
 
     # ... (Update Button Logik wie zuvor)
 
