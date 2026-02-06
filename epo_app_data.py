@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 # Konfiguration
-FIRMEN = ['WFL Millturn'] 
+firma = ['WFL Millturn'] 
 DATA_FILE = 'app_patent_data.json'
 
 def get_text(element, path, namespaces):
