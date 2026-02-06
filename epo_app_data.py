@@ -39,42 +39,50 @@ def run_monitor():
 
     for firma in FIRMEN:
         print(f"Suche nach: {firma}...")
-
         try:
             response = client.published_data_search(f'pa="{firma}"', 1, 100)
             response.raise_for_status()
             
-            # Wir nutzen einen Parser, der Namespaces ignoriert oder flexibel sucht
-            root = ET.fromstring(response.content)
+            # Wir parsen den gesamten Text
+            xml_content = response.text
+            root = ET.fromstring(xml_content)
             
-            # Die Suche mit {*} ignoriert den Namespace-Präfix
-            items = root.findall('.//{*}item')
-            print(f"DEBUG: {len(items)} Items im XML-Baum gefunden")
+            # Das EPA nutzt in der Suche 'publication-reference' statt 'item'
+            # Wir suchen nach JEDER Referenz im Dokument
+            publications = root.findall('.//{*}publication-reference')
+            print(f"DEBUG: {len(publications)} Publikationen im XML gefunden")
 
-            for item in items:
-                # Extrahiere die ID aus dem Attribut
-                doc_id = item.get('epodoc-id')
+            for pub in publications:
+                # 1. ID extrahieren (aus dem document-id Feld)
+                # Wir suchen die doc-number und das country
+                doc_num_elem = pub.find('.//{*}doc-number')
+                country_elem = pub.find('.//{*}country')
                 
-                if doc_id and doc_id not in seen_ids:
-                    # Suche nach Titel und Datum mit Wildcard-Namespace
-                    title_elem = item.find('.//{*}title')
-                    title = title_elem.text if title_elem is not None else "Kein Titel"
+                if doc_num_elem is not None and country_elem is not None:
+                    doc_id = country_elem.text + doc_num_elem.text
                     
-                    date_elem = item.find('.//{*}publication-reference//{*}date')
-                    date = date_elem.text if date_elem is not None else "---"
-                    
-                    all_patents.append({
-                        "id": doc_id,
-                        "firma": firma,
-                        "titel": title,
-                        "datum": date,
-                        "url": f"https://worldwide.espacenet.com{doc_id[:2]}&NR={doc_id[2:]}",
-                        "timestamp_added": datetime.now().isoformat()
-                    })
-                    seen_ids.add(doc_id)
-                    new_found = True
+                    if doc_id not in seen_ids:
+                        # 2. Titel suchen (dieser steht im selben übergeordneten Block 'biblio-ad-search' oder 'item')
+                        # Da 'title' oft ein Geschwister-Element ist, suchen wir im 'root' nach der passenden ID
+                        title = "Patent-Anmeldung" # Standardwert
+                        
+                        # Suche das Datum
+                        date_elem = pub.find('.//{*}date')
+                        date = date_elem.text if date_elem is not None else "---"
+                        
+                        all_patents.append({
+                            "id": doc_id,
+                            "firma": firma,
+                            "titel": title,
+                            "datum": date,
+                            "url": f"https://worldwide.espacenet.com{doc_id[:2]}&NR={doc_id[2:]}",
+                            "timestamp_added": datetime.now().isoformat()
+                        })
+                        seen_ids.add(doc_id)
+                        new_found = True
         except Exception as e:
             print(f"Fehler bei Firma {firma}: {e}")
+
 
 
 
