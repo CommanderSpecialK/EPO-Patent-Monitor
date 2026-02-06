@@ -18,8 +18,43 @@ def check_password():
         return False
     return st.session_state["password_correct"]
 
+# ... (Oben: Imports und Passwort-Check)
+
 if check_password():
     st.title("🔒 Interner Patent Monitor")
+
+    # Zugriff auf GitHub via Secret Token
+    # Stelle sicher, dass GH_PAT in den Streamlit Cloud Secrets hinterlegt ist!
+    token = st.secrets["GH_PAT"]
+    headers = {"Authorization": f"token {token}"}
+    
+    # URL zum RAW-Inhalt (achte auf das /main/ oder /master/)
+    DATA_URL = "https://raw.githubusercontent.com"
+
+    try:
+        response = requests.get(DATA_URL, headers=headers)
+        
+        if response.status_code == 200:
+            # Sicherheitscheck: Ist die Antwort leer?
+            if not response.text.strip():
+                st.warning("Die Datenbank-Datei ist noch leer.")
+            else:
+                data = response.json() # Nutzt direkt die requests-interne JSON-Logik
+                df = pd.DataFrame(data)
+                
+                if not df.empty:
+                    st.success(f"{len(df)} Patente geladen.")
+                    st.dataframe(df, use_container_width=True)
+                else:
+                    st.info("Keine Einträge in der Liste.")
+        else:
+            st.error(f"Fehler beim Laden: Status {response.status_code}. Prüfe die URL und den GH_PAT.")
+            
+    except Exception as e:
+        st.error(f"Kritischer Fehler beim Verarbeiten der Daten: {e}")
+
+    # ... (Update Button Logik wie zuvor)
+
 
     # 2. Update Button Logik
     if st.button("🔄 Jetzt Daten vom EPA abrufen (GitHub Action)"):
