@@ -33,7 +33,7 @@ def run_monitor():
 
     for firma in FIRMEN:
         # Suche nach Anmelder (pa)
-        response = client.published_data_search(cql_query=f'pa="{firma}"', range_begin=1, range_end=50)
+        response = client.published_data_search(query=f'pa="{firma}"', range_begin=1, range_end=50)
         root = ET.fromstring(response.content)
         
         for item in root.findall('.//exchange:item', namespaces):
