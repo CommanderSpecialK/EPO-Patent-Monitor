@@ -22,7 +22,7 @@ jobs:
       - name: Commit and Push
         env:
           # Wir nutzen den eingebauten Token für die Authentifizierung beim Push
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
