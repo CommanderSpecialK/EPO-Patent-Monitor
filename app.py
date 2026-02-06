@@ -19,36 +19,52 @@ def check_password():
         return False
     return st.session_state["password_correct"]
 
-# ... (Oben: Imports und Passwort-Check)
 
 if check_password():
     st.title("🔒 Interner Patent Monitor")
 
-    # Zugriff auf GitHub via Secret Token
-    # Stelle sicher, dass GH_PAT in den Streamlit Cloud Secrets hinterlegt ist!
-    token = st.secrets["GH_PAT"]
-    headers = {
-        "Authorization": f"token {token}",
-        "Accept": "application/vnd.github.v3.raw" # Erzwingt den Rohinhalt via API
-    }
+    # 1. API-Abruf vorbereiten
+    # WICHTIG: Ersetze USER und REPO durch deine echten Namen!
+    USER = "CommanderSpecialK"
+    REPO = "EPO-Patent-Monitor"
+    API_URL = f"https://api.github.com/{USER}/{REPO}/contents/app_patent_data.json"
     
-    # URL zum RAW-Inhalt (achte auf das /main/ oder /master/)
-    API_URL = "https://api.github.com"
+    headers = {"Authorization": f"token {st.secrets['GH_PAT']}"}
 
     try:
         response = requests.get(API_URL, headers=headers)
         
         if response.status_code == 200:
-            # Die API liefert bei diesem Header direkt den Dateiinhalt
-            data = response.json() 
-            df = pd.DataFrame(data)
-            st.success("Daten geladen!")
-            st.dataframe(df)
+            content_json = response.json()
+            
+            # GitHub liefert den Inhalt Base64-kodiert im Feld 'content'
+            base64_content = content_json['content']
+            decoded_bytes = base64.b64decode(base64_content)
+            decoded_str = decoded_bytes.decode('utf-8')
+            
+            # Jetzt haben wir den echten JSON-Text unserer Patent-Liste
+            patent_data = json.loads(decoded_str)
+            
+            if not patent_data:
+                st.info("Die Datenbank ist aktuell noch leer. Starte ein Update!")
+            else:
+                df = pd.DataFrame(patent_data)
+                
+                # Anzeige verschönern
+                st.success(f"{len(df)} Patente gefunden.")
+                # Spalten sortieren oder auswählen falls gewünscht
+                st.dataframe(df, use_container_width=True)
+                
+        elif response.status_code == 404:
+            st.error("Datei 'app_patent_data.json' nicht im Repo gefunden.")
         else:
-            st.error(f"Fehler {response.status_code}: Wahrscheinlich ist der GH_PAT nicht korrekt oder die URL falsch.")
-            st.write("Antwort von GitHub:", response.text[:200]) # Hilft beim Debuggen
+            st.error(f"GitHub API Fehler {response.status_code}: {response.text}")
+
     except Exception as e:
-        st.error(f"Fehler: {e}")
+        st.error(f"Fehler bei der Datenverarbeitung: {e}")
+
+    # ... (Update-Button Logik hier drunter)
+
 
 
     # ... (Update Button Logik wie zuvor)
