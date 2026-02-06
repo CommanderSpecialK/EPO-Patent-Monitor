@@ -50,12 +50,16 @@ def run_monitor():
                     
                     if doc_id not in seen_ids:
                         # Echten Titel suchen
-                        title_elem = pub.find('.//{*}title')
+                        # In der epo_app_data.py innerhalb der Schleife:
+                        title_elem = pub.find('.//{*}invention-title[@lang="de"]') # Versuche Deutsch
                         if title_elem is None:
-                            # Suche im Dokument-Stamm nach dem Titel
-                            title_elem = root.find(f".//{{*}}publication-reference[{{*}}doc-number='{doc_num.text}']..//{{*}}title")
+                            title_elem = pub.find('.//{*}invention-title') # Nimm was da ist
+                        if title_elem is None:
+                            title_elem = pub.find('.//{*}title')
                         
-                        title = title_elem.text if title_elem is not None else "Titel nicht verfügbar"
+                        title = title_elem.text if title_elem is not None else "Titel noch nicht im Index"
+
+                        
                         date_elem = pub.find('.//{*}date')
                         date = date_elem.text if date_elem is not None else "---"
                         
