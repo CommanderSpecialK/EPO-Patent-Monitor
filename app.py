@@ -80,7 +80,7 @@ if check_password():
     st.subheader("System-Steuerung")
     if st.button("🔄 Neues EPO-Update anstoßen"):
         with st.spinner("Sende Befehl an GitHub Actions..."):
-            dispatch_url = f"https://api.github.com{USER}/{REPO}/actions/workflows/main.yml/dispatches"
+            dispatch_url = f"https://api.github.com/repos/{USER}/{REPO}/actions/workflows/main.yml/dispatches"
             res = requests.post(dispatch_url, headers=headers, json={"ref": "main"})
             
             if res.status_code == 204:
