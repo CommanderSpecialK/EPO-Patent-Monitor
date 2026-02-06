@@ -20,11 +20,12 @@ jobs:
           EPO_SECRET: ${{ secrets.EPO_SECRET }}
         run: python epo_app_data.py
       - name: Commit and Push
+        env:
+          # Wir nutzen den eingebauten Token für die Authentifizierung beim Push
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name 'Bot'
-          git config --global user.email 'bot@github.com'
-          # Falls die Datei neu ist, wird sie hier sicher hinzugefügt
-          git add app_patent_data.json || echo "Datei nicht gefunden"
-          # Commit nur ausführen, wenn es Änderungen gibt
-          git commit -m "Data Update" || echo "Keine Änderungen zum Committen"
-          git push || echo "Nichts zum Pushen"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add app_patent_data.json
+          # Nur committen, wenn es wirklich Änderungen gibt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Data Update" && git push)
