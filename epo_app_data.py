@@ -53,10 +53,9 @@ def run_monitor():
             # Wir suchen nach JEDER Referenz im Dokument
             publications = root.findall('.//{*}publication-reference')
             print(f"DEBUG: {len(publications)} Publikationen im XML gefunden")
-
+            
             for pub in publications:
-                # 1. ID extrahieren (aus dem document-id Feld)
-                # Wir suchen die doc-number und das country
+                # 1. ID zusammenbauen
                 doc_num_elem = pub.find('.//{*}doc-number')
                 country_elem = pub.find('.//{*}country')
                 
@@ -64,24 +63,33 @@ def run_monitor():
                     doc_id = country_elem.text + doc_num_elem.text
                     
                     if doc_id not in seen_ids:
-                        # 2. Titel suchen (dieser steht im selben übergeordneten Block 'biblio-ad-search' oder 'item')
-                        # Da 'title' oft ein Geschwister-Element ist, suchen wir im 'root' nach der passenden ID
-                        title = "Patent-Anmeldung" # Standardwert
+                        # --- NEU: Dynamische Titelsuche ---
+                        # Wir suchen im aktuellen Publikations-Block nach dem Titel
+                        # Falls nicht gefunden, suchen wir im gesamten Dokument-Baum nach der passenden ID
+                        title_elem = pub.find('.//{*}title') 
+                        if title_elem is None:
+                            # Manchmal liegt der Titel eine Ebene höher (Geschwister-Element)
+                            # Wir nutzen einen relativen Pfad nach oben oder suchen global
+                            title_elem = root.find(f".//{{*}}publication-reference[{{*}}doc-number='{doc_num_elem.text}']..//{{*}}title")
                         
-                        # Suche das Datum
+                        title = title_elem.text if title_elem is not None else "Titel nicht verfügbar"
+                        
+                        # Datum extrahieren
                         date_elem = pub.find('.//{*}date')
                         date = date_elem.text if date_elem is not None else "---"
                         
                         all_patents.append({
                             "id": doc_id,
                             "firma": firma,
-                            "titel": title,
+                            "titel": title, # Jetzt mit echtem Titel!
                             "datum": date,
                             "url": f"https://worldwide.espacenet.com{doc_id[:2]}&NR={doc_id[2:]}",
                             "timestamp_added": datetime.now().isoformat()
                         })
                         seen_ids.add(doc_id)
                         new_found = True
+
+
         except Exception as e:
             print(f"Fehler bei Firma {firma}: {e}")
 
