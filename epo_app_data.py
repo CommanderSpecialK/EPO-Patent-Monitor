@@ -39,31 +39,28 @@ def run_monitor():
 
     for firma in FIRMEN:
         print(f"Suche nach: {firma}...")
-        try:
-            # Wir suchen nach dem Firmennamen im Feld 'pa'
-            query = f'pa="{firma}"'
-            # Das EPA liefert meist die aktuellsten Daten, wenn man den Suchbereich groß genug wählt 
-            # oder explizit nach Veröffentlichungsjahren filtert
-            response = client.published_data_search(query, 1, 100) 
-            print(f"Antwort-Status für {firma}: {response.status_code}")
-            # Testweise die Anzahl der gefundenen Ergebnisse im XML anzeigen:
-            if "total-result-count" in response.text:
-                import re
-                count = re.findall(r'total-result-count="(\d+)"', response.text)
-                print(f"Treffer gefunden: {count}")
 
+        try:
+            response = client.published_data_search(f'pa="{firma}"', 1, 100)
             response.raise_for_status()
             
+            # Wir nutzen einen Parser, der Namespaces ignoriert oder flexibel sucht
             root = ET.fromstring(response.content)
             
-            for item in root.findall('.//exchange:item', ns):
+            # Die Suche mit {*} ignoriert den Namespace-Präfix
+            items = root.findall('.//{*}item')
+            print(f"DEBUG: {len(items)} Items im XML-Baum gefunden")
+
+            for item in items:
+                # Extrahiere die ID aus dem Attribut
                 doc_id = item.get('epodoc-id')
                 
-                if doc_id not in seen_ids:
-                    title_elem = item.find('.//exchange:title', ns)
+                if doc_id and doc_id not in seen_ids:
+                    # Suche nach Titel und Datum mit Wildcard-Namespace
+                    title_elem = item.find('.//{*}title')
                     title = title_elem.text if title_elem is not None else "Kein Titel"
                     
-                    date_elem = item.find('.//exchange:publication-reference//exchange:date', ns)
+                    date_elem = item.find('.//{*}publication-reference//{*}date')
                     date = date_elem.text if date_elem is not None else "---"
                     
                     all_patents.append({
@@ -78,6 +75,7 @@ def run_monitor():
                     new_found = True
         except Exception as e:
             print(f"Fehler bei Firma {firma}: {e}")
+
 
 
     # 4. Speichern (immer ausführen, damit Git keinen Fehler wirft)
