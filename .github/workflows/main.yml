@@ -1,0 +1,28 @@
+name: Patent Update
+on:
+  schedule:
+    - cron: '0 9 * * 4' # Jeden Donnerstag
+  workflow_dispatch: # Erlaubt den Button-Trigger
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install
+        run: pip install epo-ops
+      - name: Run
+        env:
+          EPO_KEY: ${{ secrets.EPO_KEY }}
+          EPO_SECRET: ${{ secrets.EPO_SECRET }}
+        run: python epo_app_data.py
+      - name: Commit
+        run: |
+          git config --global user.name 'Bot'
+          git config --global user.email 'bot@github.com'
+          git add app_patent_data.json
+          git commit -m "Data Update" || exit 0
+          git push
