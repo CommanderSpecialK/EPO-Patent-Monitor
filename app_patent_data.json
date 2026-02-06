@@ -1,1 +1,690 @@
-[]
+[
+    {
+        "id": "USD1101003",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D1101003",
+        "timestamp_added": "2026-02-06T09:33:36.112329"
+    },
+    {
+        "id": "EP4464458",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=4464458",
+        "timestamp_added": "2026-02-06T09:33:36.112347"
+    },
+    {
+        "id": "EP4163053",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=4163053",
+        "timestamp_added": "2026-02-06T09:33:36.112358"
+    },
+    {
+        "id": "USD886876",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D886876",
+        "timestamp_added": "2026-02-06T09:33:36.112367"
+    },
+    {
+        "id": "EP3848151",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=3848151",
+        "timestamp_added": "2026-02-06T09:33:36.112376"
+    },
+    {
+        "id": "USD843423",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D843423",
+        "timestamp_added": "2026-02-06T09:33:36.112386"
+    },
+    {
+        "id": "BR112012028886",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comBR&NR=112012028886",
+        "timestamp_added": "2026-02-06T09:33:36.112396"
+    },
+    {
+        "id": "BR112013018943",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comBR&NR=112013018943",
+        "timestamp_added": "2026-02-06T09:33:36.112405"
+    },
+    {
+        "id": "EP3231544",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=3231544",
+        "timestamp_added": "2026-02-06T09:33:36.112414"
+    },
+    {
+        "id": "AT15073",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=15073",
+        "timestamp_added": "2026-02-06T09:33:36.112426"
+    },
+    {
+        "id": "SG10201503707X",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comSG&NR=10201503707X",
+        "timestamp_added": "2026-02-06T09:33:36.112436"
+    },
+    {
+        "id": "EP3040155",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=3040155",
+        "timestamp_added": "2026-02-06T09:33:36.112475"
+    },
+    {
+        "id": "US2015290701",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2015290701",
+        "timestamp_added": "2026-02-06T09:33:36.112488"
+    },
+    {
+        "id": "US2015239054",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2015239054",
+        "timestamp_added": "2026-02-06T09:33:36.112500"
+    },
+    {
+        "id": "AT515348",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=515348",
+        "timestamp_added": "2026-02-06T09:33:36.112510"
+    },
+    {
+        "id": "AT515418",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=515418",
+        "timestamp_added": "2026-02-06T09:33:36.112519"
+    },
+    {
+        "id": "DE202011110606",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comDE&NR=202011110606",
+        "timestamp_added": "2026-02-06T09:33:36.112528"
+    },
+    {
+        "id": "EP2907617",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2907617",
+        "timestamp_added": "2026-02-06T09:33:36.112537"
+    },
+    {
+        "id": "AT514624",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=514624",
+        "timestamp_added": "2026-02-06T09:33:36.112546"
+    },
+    {
+        "id": "EP2881218",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2881218",
+        "timestamp_added": "2026-02-06T09:33:36.112556"
+    },
+    {
+        "id": "EP2837463",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2837463",
+        "timestamp_added": "2026-02-06T09:33:36.112565"
+    },
+    {
+        "id": "EP2853346",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2853346",
+        "timestamp_added": "2026-02-06T09:33:36.112574"
+    },
+    {
+        "id": "USD707852",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D707852",
+        "timestamp_added": "2026-02-06T09:33:36.112585"
+    },
+    {
+        "id": "USD707371",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D707371",
+        "timestamp_added": "2026-02-06T09:33:36.112595"
+    },
+    {
+        "id": "USD707273",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=D707273",
+        "timestamp_added": "2026-02-06T09:33:36.112604"
+    },
+    {
+        "id": "AT513629",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=513629",
+        "timestamp_added": "2026-02-06T09:33:36.112615"
+    },
+    {
+        "id": "MX2013008685",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comMX&NR=2013008685",
+        "timestamp_added": "2026-02-06T09:33:36.112624"
+    },
+    {
+        "id": "AT513785",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=513785",
+        "timestamp_added": "2026-02-06T09:33:36.112633"
+    },
+    {
+        "id": "KR20140006006",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comKR&NR=20140006006",
+        "timestamp_added": "2026-02-06T09:33:36.112642"
+    },
+    {
+        "id": "EP2745967",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2745967",
+        "timestamp_added": "2026-02-06T09:33:36.112651"
+    },
+    {
+        "id": "EP2900399",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2900399",
+        "timestamp_added": "2026-02-06T09:33:36.112660"
+    },
+    {
+        "id": "US2013333531",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2013333531",
+        "timestamp_added": "2026-02-06T09:33:36.112669"
+    },
+    {
+        "id": "CN103443722",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comCN&NR=103443722",
+        "timestamp_added": "2026-02-06T09:33:36.112678"
+    },
+    {
+        "id": "SG192228",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comSG&NR=192228",
+        "timestamp_added": "2026-02-06T09:33:36.112687"
+    },
+    {
+        "id": "WO2014047670",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2014047670",
+        "timestamp_added": "2026-02-06T09:33:36.112697"
+    },
+    {
+        "id": "WO2014049135",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2014049135",
+        "timestamp_added": "2026-02-06T09:33:36.112708"
+    },
+    {
+        "id": "CA2825802",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comCA&NR=2825802",
+        "timestamp_added": "2026-02-06T09:33:36.112717"
+    },
+    {
+        "id": "AT513276",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=513276",
+        "timestamp_added": "2026-02-06T09:33:36.112726"
+    },
+    {
+        "id": "EP2695705",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2695705",
+        "timestamp_added": "2026-02-06T09:33:36.112735"
+    },
+    {
+        "id": "AT512389",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=512389",
+        "timestamp_added": "2026-02-06T09:33:36.112745"
+    },
+    {
+        "id": "KR20130069661",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comKR&NR=20130069661",
+        "timestamp_added": "2026-02-06T09:33:36.112754"
+    },
+    {
+        "id": "MX2012013122",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comMX&NR=2012013122",
+        "timestamp_added": "2026-02-06T09:33:36.112763"
+    },
+    {
+        "id": "US2013104706",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2013104706",
+        "timestamp_added": "2026-02-06T09:33:36.112773"
+    },
+    {
+        "id": "AT513084",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=513084",
+        "timestamp_added": "2026-02-06T09:33:36.112782"
+    },
+    {
+        "id": "AT512524",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=512524",
+        "timestamp_added": "2026-02-06T09:33:36.112793"
+    },
+    {
+        "id": "SG186349",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comSG&NR=186349",
+        "timestamp_added": "2026-02-06T09:33:36.112803"
+    },
+    {
+        "id": "CN103025482",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comCN&NR=103025482",
+        "timestamp_added": "2026-02-06T09:33:36.112812"
+    },
+    {
+        "id": "EP2641692",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2641692",
+        "timestamp_added": "2026-02-06T09:33:36.112821"
+    },
+    {
+        "id": "EP2639011",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2639011",
+        "timestamp_added": "2026-02-06T09:33:36.112832"
+    },
+    {
+        "id": "CA2800682",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comCA&NR=2800682",
+        "timestamp_added": "2026-02-06T09:33:36.112842"
+    },
+    {
+        "id": "AT511195",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=511195",
+        "timestamp_added": "2026-02-06T09:33:36.112851"
+    },
+    {
+        "id": "AT511980",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=511980",
+        "timestamp_added": "2026-02-06T09:33:36.112860"
+    },
+    {
+        "id": "EP2712694",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2712694",
+        "timestamp_added": "2026-02-06T09:33:36.112869"
+    },
+    {
+        "id": "EP2570218",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2570218",
+        "timestamp_added": "2026-02-06T09:33:36.112879"
+    },
+    {
+        "id": "AT511744",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=511744",
+        "timestamp_added": "2026-02-06T09:33:36.112888"
+    },
+    {
+        "id": "EP2572826",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2572826",
+        "timestamp_added": "2026-02-06T09:33:36.112897"
+    },
+    {
+        "id": "AT510412",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=510412",
+        "timestamp_added": "2026-02-06T09:33:36.112910"
+    },
+    {
+        "id": "AT510515",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=510515",
+        "timestamp_added": "2026-02-06T09:33:36.112920"
+    },
+    {
+        "id": "EP2668547",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2668547",
+        "timestamp_added": "2026-02-06T09:33:36.112930"
+    },
+    {
+        "id": "WO2012100278",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2012100278",
+        "timestamp_added": "2026-02-06T09:33:36.112939"
+    },
+    {
+        "id": "AT510022",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=510022",
+        "timestamp_added": "2026-02-06T09:33:36.112948"
+    },
+    {
+        "id": "EP2455183",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2455183",
+        "timestamp_added": "2026-02-06T09:33:36.112959"
+    },
+    {
+        "id": "AT509778",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=509778",
+        "timestamp_added": "2026-02-06T09:33:36.112968"
+    },
+    {
+        "id": "EP2433742",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2433742",
+        "timestamp_added": "2026-02-06T09:33:36.112977"
+    },
+    {
+        "id": "ATE518173",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=E518173",
+        "timestamp_added": "2026-02-06T09:33:36.112986"
+    },
+    {
+        "id": "EP2415557",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2415557",
+        "timestamp_added": "2026-02-06T09:33:36.112996"
+    },
+    {
+        "id": "EP2569124",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2569124",
+        "timestamp_added": "2026-02-06T09:33:36.113005"
+    },
+    {
+        "id": "WO2011140578",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2011140578",
+        "timestamp_added": "2026-02-06T09:33:36.113014"
+    },
+    {
+        "id": "AT508493",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=508493",
+        "timestamp_added": "2026-02-06T09:33:36.113023"
+    },
+    {
+        "id": "AT508037",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=508037",
+        "timestamp_added": "2026-02-06T09:33:36.113032"
+    },
+    {
+        "id": "DE102010011851",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comDE&NR=102010011851",
+        "timestamp_added": "2026-02-06T09:33:36.113041"
+    },
+    {
+        "id": "AT11347",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=11347",
+        "timestamp_added": "2026-02-06T09:33:36.113050"
+    },
+    {
+        "id": "WO2010144929",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2010144929",
+        "timestamp_added": "2026-02-06T09:33:36.113059"
+    },
+    {
+        "id": "EP2442937",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=2442937",
+        "timestamp_added": "2026-02-06T09:33:36.113068"
+    },
+    {
+        "id": "AT505628",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=505628",
+        "timestamp_added": "2026-02-06T09:33:36.113079"
+    },
+    {
+        "id": "US2004194593",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2004194593",
+        "timestamp_added": "2026-02-06T09:33:36.113090"
+    },
+    {
+        "id": "US2008243387",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comUS&NR=2008243387",
+        "timestamp_added": "2026-02-06T09:33:36.113100"
+    },
+    {
+        "id": "EP1464440",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=1464440",
+        "timestamp_added": "2026-02-06T09:33:36.113111"
+    },
+    {
+        "id": "DE10315006",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comDE&NR=10315006",
+        "timestamp_added": "2026-02-06T09:33:36.113121"
+    },
+    {
+        "id": "WO2006029432",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comWO&NR=2006029432",
+        "timestamp_added": "2026-02-06T09:33:36.113130"
+    },
+    {
+        "id": "AT502286",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=502286",
+        "timestamp_added": "2026-02-06T09:33:36.113139"
+    },
+    {
+        "id": "AT502528",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=502528",
+        "timestamp_added": "2026-02-06T09:33:36.113148"
+    },
+    {
+        "id": "AT501735",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=501735",
+        "timestamp_added": "2026-02-06T09:33:36.113157"
+    },
+    {
+        "id": "ATE327858",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=E327858",
+        "timestamp_added": "2026-02-06T09:33:36.113166"
+    },
+    {
+        "id": "AT9900",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comAT&NR=9900",
+        "timestamp_added": "2026-02-06T09:33:36.113175"
+    },
+    {
+        "id": "EP1789861",
+        "firma": "WFL",
+        "titel": "Patent-Anmeldung",
+        "datum": "---",
+        "url": "https://worldwide.espacenet.comEP&NR=1789861",
+        "timestamp_added": "2026-02-06T09:33:36.113184"
+    }
+]
