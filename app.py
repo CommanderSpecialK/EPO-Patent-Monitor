@@ -43,7 +43,7 @@ if check_password():
 
         token = st.secrets["GH_PAT"]
         headers = {"Authorization": f"token {token}"}
-        API_URL = f"https://api.github.com{USER}/{REPO}/contents/{FILE}"
+        API_URL = f"https://api.github.com/{USER}/{REPO}/contents/{FILE}"
 
         response = requests.get(API_URL, headers=headers)
         
