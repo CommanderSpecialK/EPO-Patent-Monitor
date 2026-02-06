@@ -23,7 +23,9 @@ def run_monitor():
     
     # 3. Bestehende Daten laden
     if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        with open(DATA_FILE, 'w', encoding='utf-8') as f:
+        # ensure_ascii=False ist wichtig für Umlaute etc.
+        json.dump(all_patents, f, indent=4, ensure_ascii=False)
             try:
                 all_patents = json.load(f)
             except json.JSONDecodeError:
