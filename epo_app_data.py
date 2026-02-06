@@ -69,14 +69,17 @@ def run_monitor():
         except Exception as e:
             print(f"Fehler bei Firma {firma}: {e}")
 
-    # 4. Speichern, falls neue Daten gefunden wurden
+
+    # 4. Speichern (immer ausführen, damit Git keinen Fehler wirft)
+    all_patents.sort(key=lambda x: x.get('datum', '0000'), reverse=True)
+    with open(DATA_FILE, 'w', encoding='utf-8') as f:
+        json.dump(all_patents, f, indent=4, ensure_ascii=False)
+    
     if new_found:
-        all_patents.sort(key=lambda x: x['datum'], reverse=True)
-        with open(DATA_FILE, 'w', encoding='utf-8') as f:
-            json.dump(all_patents, f, indent=4, ensure_ascii=False)
-        print(f"Update erfolgreich: {len(all_patents)} Patente insgesamt.")
+        print(f"Update erfolgreich: Neue Patente gefunden.")
     else:
-        print("Keine neuen Patente gefunden.")
+        print("Keine neuen Patente gefunden, Datei wurde dennoch aktualisiert.")
+
 
 if __name__ == "__main__":
     run_monitor()
