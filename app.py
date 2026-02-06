@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import json
 import os
+import base64
 
 # 1. Passwortschutz
 def check_password():
@@ -26,31 +27,28 @@ if check_password():
     # Zugriff auf GitHub via Secret Token
     # Stelle sicher, dass GH_PAT in den Streamlit Cloud Secrets hinterlegt ist!
     token = st.secrets["GH_PAT"]
-    headers = {"Authorization": f"token {token}"}
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3.raw" # Erzwingt den Rohinhalt via API
+    }
     
     # URL zum RAW-Inhalt (achte auf das /main/ oder /master/)
-    DATA_URL = "https://raw.githubusercontent.com"
+    API_URL = "https://api.github.com"
 
     try:
-        response = requests.get(DATA_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers)
         
         if response.status_code == 200:
-            content = response.text.strip()
-            # Falls die Datei nur "[]" enthält oder leer ist
-            if content == "[]" or not content:
-                st.info("Die Datenbank ist aktuell noch leer.")
-            else:
-                # Hier nutzen wir response.json() statt json.loads()
-                data = response.json()
-                df = pd.DataFrame(data)
-                st.success("Daten erfolgreich geladen.")
-                st.dataframe(df)
+            # Die API liefert bei diesem Header direkt den Dateiinhalt
+            data = response.json() 
+            df = pd.DataFrame(data)
+            st.success("Daten geladen!")
+            st.dataframe(df)
         else:
-            st.error(f"GitHub meldet Fehler {response.status_code}. Token oder URL prüfen.")
+            st.error(f"Fehler {response.status_code}: Wahrscheinlich ist der GH_PAT nicht korrekt oder die URL falsch.")
+            st.write("Antwort von GitHub:", response.text[:200]) # Hilft beim Debuggen
     except Exception as e:
-        st.error(f"Inhalt der Datei ist kein gültiges JSON: {e}")
-        # Debug: Zeige die ersten 100 Zeichen der Antwort
-        st.code(response.text[:100], language="text")
+        st.error(f"Fehler: {e}")
 
 
     # ... (Update Button Logik wie zuvor)
