@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 
 # Konfiguration
-firma = ['WFL Millturn'] 
+FIRMEN = ['WFL Millturn'] 
 DATA_FILE = 'app_patent_data.json'
 
 def get_text(element, path, namespaces):
@@ -33,7 +33,7 @@ def run_monitor():
 
     for firma in FIRMEN:
         # Suche nach Anmelder (pa)
-        response = client.published_data_search(query=f'pa="{firma}"', range_begin=1, range_end=50)
+        response = client.published_data_search(f'pa="{firma}"', 1, 50)
         root = ET.fromstring(response.content)
         
         for item in root.findall('.//exchange:item', namespaces):
